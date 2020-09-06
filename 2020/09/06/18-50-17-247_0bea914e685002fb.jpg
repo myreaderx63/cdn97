@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157824361-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-157824361-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.hex-rays.com/xmlrpc.php">
+    <link rel="alternate" type="application/rss+xml" title="Hex-Rays Blog Feed" href="https://www.hex-rays.com/feed/"/>
+	<title>Hex-Rays Blog &#8211; Hex Rays</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='fawesome-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/fontawesome/css/all.min.css?v=1599418216&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='style-bootstrap-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/css/bootstrap.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/slick/slick.css?v=1599418216&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/css/main.css?v=1599418216&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='markdown-github-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/css/markdown-github.css?v=1599418216&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='highlight-css'  href='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/css/highlightjs/styles/mono-blue.css?v=1599418216&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cf7-countries-css'  href='https://www.hex-rays.com/wp-content/plugins/cf7-countries/public/css/cf7-countries-public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.hex-rays.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.4' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/jquery/jquery-3.4.1.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/plugins/cf7-countries/public/js/cf7-countries-public.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='https://www.hex-rays.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hex-rays.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.hex-rays.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel="canonical" href="https://www.hex-rays.com/blog/" />
+<link rel='shortlink' href='https://www.hex-rays.com/?p=156' />
+<style type="text/css">.broken_link, a.broken_link {
+text-decoration: line-through;
+background-color: yellow;
+}</style></head>
+<body class="page-template page-template-page-blog page-template-page-blog-php page page-id-156 wp-custom-logo">
+<a name="top"></a>
+<div class="top-menu inner-menu">
+    <div class="container">
+        <div class="top-link-area">
+            <i class="far fa-envelope"></i> Contact: <a href="/cdn-cgi/l/email-protection#8ce5e2eae3cce4e9f4a1feedf5ffa2efe3e1"><span class="__cf_email__" data-cfemail="83eaede5ecc3">[email&#160;protected]</span></a> <a href="/cdn-cgi/l/email-protection#c5b6a4a9a0b685ada0bde8b7a4bcb6eba6aaa8"><span class="__cf_email__" data-cfemail="4f3c2e232a3c0f">[email&#160;protected]</span></a> <a href="/cdn-cgi/l/email-protection#205745424d4153544552604845580d524159530e434f4d"><span class="__cf_email__" data-cfemail="88ffedeae5e9fbfcedfac8">[email&#160;protected]</span></a>
+            <i class="fas fa-tag"></i> <a href="/cgi-bin/quote.cgi">Get a quote</a>
+            <a class="socialmedia-link" href="https://twitter.com/hexrayssa"><i class="fab fa-twitter"></i></a>
+            <a class="socialmedia-link" href="https://www.linkedin.com/company/hex-rays-sa"><i class="fab fa-linkedin"></i></a>
+			<div class="search-form-holder search-hex">
+    <form role="search" method="get" class="search-form" action="https://www.hex-rays.com/">
+        <input type="search" class="search-field" placeholder="Search hex-rays.com&hellip;" value="" name="s" />
+        <button type="submit" class="search-submit"><span class="screen-reader-text"><i class="fa fa-search"></i></span></button>
+    </form>
+</div>
+        </div>
+        <div class="d-none d-md-block">
+            <a href="https://www.hex-rays.com" rel="home"><img src="/wp-content/themes/hex-rays/img/horizontal-logo-path-yk-wp.svg" alt="Hex Rays" style="margin: 2em 0;"/></a>
+        </div>
+
+        <nav role="navigation" class="navbar navbar-expand-lg">
+        <a class="navbar-brand d-block d-md-none mt-1" href="https://www.hex-rays.com" rel="home"><img class="mt-2"
+                                                                                                            src="/wp-content/themes/hex-rays/img/hex-texticon-logo121x50.png" alt="small logo">Hex-Rays</a>
+		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<div class="menu-primary-container"><ul id="menu-primary" class="navbar-nav"><li id="menu-item-3003" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-3003 nav-item"><a href="https://www.hex-rays.com/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+<ul class="sub-menu">
+	<li id="menu-item-2914" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2914 nav-item"><a href="https://www.hex-rays.com/about/" class="nav-link">About Hex-Rays</a></li>
+	<li id="menu-item-3504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3504 nav-item"><a href="https://www.hex-rays.com/jobs/" class="nav-link">Careers at Hex-Rays</a></li>
+	<li id="menu-item-3435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3435 nav-item"><a href="https://www.hex-rays.com/terms_of_use/" class="nav-link">Terms of use</a></li>
+	<li id="menu-item-3434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3434 nav-item"><a href="https://www.hex-rays.com/privacy_policy/" class="nav-link">Privacy policy</a></li>
+</ul>
+</li>
+<li id="menu-item-3238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3238 nav-item"><a href="https://www.hex-rays.com/products/ida/" class="nav-link"><i class="fas fa-laptop-code"></i> IDA Pro</a>
+<ul class="sub-menu">
+	<li id="menu-item-3729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3729 nav-item"><a href="https://www.hex-rays.com/products/ida/compelling-reasons-to-use-ida/" class="nav-link">Compelling reasons to use IDA</a></li>
+	<li id="menu-item-3250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3250 nav-item"><a href="https://www.hex-rays.com/products/ida/our-philosophy/" class="nav-link">Our philosophy</a></li>
+	<li id="menu-item-4098" class="main-nav-menu-bt menu-item menu-item-type-post_type menu-item-object-page menu-item-4098 nav-item"><a href="https://www.hex-rays.com/products/idahome/" class="nav-link">IDA Home  <img style="max-width:25px;" src="/wp-content/uploads/2020/05/icon_menunew.png" alt="new"></a></li>
+	<li id="menu-item-4097" class="main-nav-menu-bb menu-item menu-item-type-post_type menu-item-object-page menu-item-4097 nav-item"><a href="https://www.hex-rays.com/products/ida/main-differences-between-ida-editions/" class="nav-link">Main differences between IDA editions</a></li>
+	<li id="menu-item-3489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3489 nav-item"><a href="https://www.hex-rays.com/products/ida/tech/" class="nav-link">IDA Highlights</a></li>
+	<li id="menu-item-3255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3255 nav-item"><a href="https://www.hex-rays.com/products/ida/processors/" class="nav-link">Supported Processors</a></li>
+	<li id="menu-item-4706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4706 nav-item"><a href="https://www.hex-rays.com/products/ida/processor-gallery/" class="nav-link">Disassemblies Gallery</a></li>
+	<li id="menu-item-3258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3258 nav-item"><a href="https://www.hex-rays.com/products/ida/file_formats/" class="nav-link">Supported File Types</a></li>
+	<li id="menu-item-3272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3272 nav-item"><a href="https://www.hex-rays.com/products/ida/debugger/" class="nav-link">Overview of the IDA Debugger</a></li>
+	<li id="menu-item-3291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3291 nav-item"><a href="https://www.hex-rays.com/products/ida/support/" class="nav-link">IDA Support, Documentation and Tutorials</a></li>
+	<li id="menu-item-3507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3507 nav-item"><a href="https://www.hex-rays.com/products/ida/news/" class="nav-link">IDA News and Releases</a></li>
+	<li id="menu-item-3673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3673 nav-item"><a href="https://www.hex-rays.com/products/ida/training/" class="nav-link">Trainings and Seminars</a></li>
+</ul>
+</li>
+<li id="menu-item-2968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2968 nav-item"><a href="https://www.hex-rays.com/products/decompiler/" class="nav-link"><i class="fas fa-file-code"></i> Decompiler</a>
+<ul class="sub-menu">
+	<li id="menu-item-3419" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3419 nav-item"><a href="https://www.hex-rays.com/products/decompiler/compare/compare_vs_disassembly/" class="nav-link">Introduction to Decompilation vs. Disassembly</a></li>
+	<li id="menu-item-4236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4236 nav-item"><a href="https://www.hex-rays.com/products/decompiler/compare/" class="nav-link">Decompilation comparisons</a></li>
+	<li id="menu-item-3450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3450 nav-item"><a href="https://www.hex-rays.com/products/decompiler/support/" class="nav-link">Hex-Rays Decompiler Support</a></li>
+</ul>
+</li>
+<li id="menu-item-3205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3205 nav-item"><a href="https://www.hex-rays.com/order/" class="nav-link"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+<li id="menu-item-582" class="isblog menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-156 current_page_item menu-item-582 nav-item"><a href="https://www.hex-rays.com/blog/" aria-current="page" class="nav-link"><i class="fas fa-rss"></i> Blog</a></li>
+<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35 nav-item"><a href="https://forum.hex-rays.com/" class="nav-link"><i class="fas fa-comments"></i> Forum</a></li>
+<li id="menu-item-1380" class="iscontests menu-item menu-item-type-post_type menu-item-object-page menu-item-1380 nav-item"><a href="https://www.hex-rays.com/contests/" class="nav-link"><i class="fas fa-award"></i> Contests</a></li>
+<li id="menu-item-3453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3453 nav-item"><a href="https://www.hex-rays.com/contact/" class="nav-link"><i class="far fa-comment-dots"></i> Contact</a></li>
+</ul></div>        </div>
+        </nav>
+    </div>
+</div>
+
+<div class="breadcrumbs-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs" typeof="BreadcrumbList"
+                     vocab="https://schema.org/">
+					<!-- Breadcrumb NavXT 6.4.0 -->
+You are here: <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Hex Rays." href="https://www.hex-rays.com" class="home" ><span property="name">Hex Rays</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Hex-Rays Blog." href="https://www.hex-rays.com/blog/" class="post post-page current-item" aria-current="page"><span property="name">Hex-Rays Blog</span></a><meta property="position" content="2"></span>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <section class="section section-blog">
+        <div class="container">
+            <div class="row" id="postResults">
+                <div class="col-md-12">
+                    <h1>Hex-Rays Blog                        <sup>State of the art code analysis</sup>
+                        <img class="icon-in-heading" src="/wp-content/uploads/2020/01/icon_blog.png" alt="Blog icon">
+                    </h1>
+
+					
+                        <div class="page-x-of">
+							Page                            &nbsp;1							of                            &nbsp;20                        </div>
+
+						                            <div class="first-post-in-list first-blog-post">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-05-highlight/">Igor’s tip of the week #05: Highlight</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												04 Sep 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Igor Skochinsky                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/idapro/">idapro</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/idatips/">idatips</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/shortcuts/">shortcuts</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>In <a href="https://www.hex-rays.com/products/ida/">IDA</a>, highlight is the dynamic coloring of a word or number under the cursor as well as all matching substrings on the screen. In the default color scheme, a yellow background color is used for the highlight.
+Highlight is updated when you click on a non-whitespace location in the listing or move the cursor with [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-05-highlight/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-04-more-selection/">Igor&#8217;s tip of the week #04: More selection!</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												28 Aug 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Igor Skochinsky                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/idatips/">idatips</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/shortcuts/">shortcuts</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>In the <a href="/blog/igor-tip-of-the-week-03-selection-in-ida/">previous post</a> we talked about the basic usage of selection in IDA. This week we&#8217;ll describe a few more examples of actions affected by selection.
+Firmware/raw binary analysis
+When disassembling a raw binary, IDA is not always able to detect code fragments and you may have to resort to trial &amp; error for finding the code [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-04-more-selection/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-03-selection-in-ida/">Igor’s tip of the week #03: Selection in IDA</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												21 Aug 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Igor Skochinsky                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-home/">IDA Home</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/idatips/">idatips</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/shortcuts/">shortcuts</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/ui/">UI</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>This week&#8217;s post is about selecting items in IDA and what you can do with the selection.
+As a small change from the previous posts with mainly keyboard usage, we&#8217;ll also use the mouse this time!
+Actions and what they are applied to
+When an action is performed in IDA, by default it is applied only to the [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-03-selection-in-ida/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-02-ida-ui-actions-and-where-to-find-them/">Igor&#8217;s tip of the week #02: IDA UI actions and where to find them</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												14 Aug 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Igor Skochinsky                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/idatips/">idatips</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/shortcuts/">shortcuts</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/ui/">UI</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>In the previous post we described how to quickly invoke some of IDA&#8217;s commands using the keyboard. However, sometimes you may need to perform a specific action many times and if it doesn&#8217;t have a default hotkey assigned it can be tedious to click through the menus. Even the accelerator keys help only so much. [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-02-ida-ui-actions-and-where-to-find-them/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-01-lesser-known-keyboard-shortcuts-in-ida/">Igor&#8217;s tip of the week #01: Lesser-known keyboard shortcuts in IDA</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												07 Aug 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Igor Skochinsky                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/idatips/">idatips</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/shortcuts/">shortcuts</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>Today, Hex-Rays is excited to launch a special blog series where Igor, one of the experts behind
+IDA, will provide useful tips and functionalities of IDA that are not always known or less
+obvious to its users.
+The first episode of this blog series covers the most useful keyboard shortcuts
+that will certainly speed up your IDA experience.
+So, we [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/igor-tip-of-the-week-01-lesser-known-keyboard-shortcuts-in-ida/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/ida-pro-7-5-sp2-released/">IDA Pro 7.5 SP2 released</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												28 Jul 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Fabrice Ovidio                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												                                            </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>Hex-Rays announces the release of Service Pack 2 (SP2) for IDA Pro 7.5.
+SP2 was introduced due to the major changes in Apple’s new versions of iOS and MacOS and their move to Apple Silicon. Hex-Rays team works constantly to improve the IDA experience and acts to ensure that IDA addresses its users’ feedback and properly [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/ida-pro-7-5-sp2-released/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/updates-to-ios-debugger-tutorial/">Updates to iOS Debugger Tutorial</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												23 Jun 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Troy Bowman                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/debugger/">debugger</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/ios/">iOS</a> <a class="tag-link" href="https://www.hex-rays.com/blog/tag/mac/">Mac</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>We have updated our <a href="/wp-content/static/tutorials/ios_debugger_primer2/ios_debugger_primer2.pdf">iOS Debugging Tutorial</a>. It has some new sections that should be of particular interest:
+
+	&#8220;Debugging the DYLD Shared Cache&#8221; discusses how to combine IDA&#8217;s incremental dyldcache loading functionality with the iOS Debugger.
+	&#8220;Debugging System Applications&#8221; is a concrete example of how to use IDA to debug an iOS system daemon on a jailbroken [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/updates-to-ios-debugger-tutorial/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/ida-pro-7-5-sp1-released/">IDA Pro 7.5 SP1 released</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												19 Jun 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Fabrice Ovidio                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												                                            </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>Hex-Rays announces the release of Service Pack 1 (SP1) for IDA Pro 7.5.
+We recently launched IDA Pro v7.5 and IDA Home, Hex-Rays’ latest, affordable professional-grade solution tailored for reverse engineering hobbyists. We are glad to announce today the release of IDA 7.5 SP1. This service pack contains enhancements and fixes to the 7.5 version, partly [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/ida-pro-7-5-sp1-released/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/ida-7-5-qt-5-6-3-configure-options-patch/">IDA 7.5: Qt 5.6.3 configure options &#038; patch</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												25 May 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Fabrice Ovidio                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												<a class="tag-link" href="https://www.hex-rays.com/blog/tag/qt/">Qt</a>                                             </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>A handful of our users have already requested information regarding the Qt 5.6.3 build, that is shipped with IDA 7.5.
+Configure options
+Here are the options that were used to build the libraries on:
+
+Windows: &#8230;\5.6.3\configure.bat &#8220;-nomake&#8221; &#8220;tests&#8221; &#8220;-qtnamespace&#8221; &#8220;QT&#8221; &#8220;-confirm-license&#8221; &#8220;-accessibility&#8221; &#8220;-opensource&#8221; &#8220;-force-debug-info&#8221; &#8220;-platform&#8221; &#8220;win32-msvc2015&#8221; &#8220;-opengl&#8221; &#8220;desktop&#8221; &#8220;-prefix&#8221; &#8220;C:/Qt/5.6.3-x64&#8221;
+
+Note that you will have to build with Visual [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/ida-7-5-qt-5-6-3-configure-options-patch/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                            <div class="other-posts-in-list">
+                                <div>
+                                                                            <!--<div class="isfirstitem">Most recent post</div>-->
+                                                                        <div class="post-list-container">
+                                        <h3>
+                                            <a href="https://www.hex-rays.com/blog/ida-pro-7-5-released/">IDA Pro 7.5 released</a>
+                                        </h3>
+										                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-calendar"></i>&nbsp;
+                                                Posted on:                                            </span>&nbsp
+												20 May 2020                                            </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-user"></i>&nbsp;
+                                            By:                                        </span>&nbsp
+												Fabrice Ovidio                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-meta">
+                                            <p>
+                                            <span><i class="fas fa-folder"></i>&nbsp;
+                                                Categories:</span>&nbsp
+												<a class="category-link" href="https://www.hex-rays.com/blog/category/ida-pro/">IDA Pro</a> <a class="category-link" href="https://www.hex-rays.com/blog/category/news/">News</a>                                             </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <p><span><i class="fas fa-tags"></i>&nbsp;
+                                            Tags:</span>&nbsp
+												                                            </p>
+                                        </div>
+                                        <div style="clear: both;">
+                                        </div>
+                                    </div>
+                                    <p>
+
+Hex-Rays announces the release of IDA Pro 7.5!
+<a href="/products/ida/">IDA Pro</a> is certainly the fastest and most reliable software solution to support professionals in their reverse-engineering work. Version 7.5 has been developed to improve the IDA experience further. It notably introduces the following features:
+
+	Tree folder structure: you can now organize your work in a hierarchical tree [&#8230;]</p>
+                                    <p><a href="https://www.hex-rays.com/blog/ida-pro-7-5-released/"
+                                          class="btn btn-sm btn-read-more">Read More&nbsp;<i
+                                                    class="fas fa-angle-double-right"></i></a>
+                                    </p>
+                                </div>
+
+                            </div>
+						                </div>
+                <!--<div class="col-md-3">
+					                </div-->>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pagination">
+                            <span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://www.hex-rays.com/blog/page/2/">2</a>
+<a class="page-numbers" href="https://www.hex-rays.com/blog/page/3/">3</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="https://www.hex-rays.com/blog/page/18/">18</a>
+<a class="page-numbers" href="https://www.hex-rays.com/blog/page/19/">19</a>
+<a class="page-numbers" href="https://www.hex-rays.com/blog/page/20/">20</a>
+<a class="next page-numbers" href="https://www.hex-rays.com/blog/page/2/">> <i></i></a>                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+<section class="footer">
+    <div class="container">
+        <div class="row bottom-holder">
+            <div class="col-12">
+                <p>Copyright (c) 2020 Hex-Rays SA. <a href="/terms_of_use">Terms of use</a> | <a href="/privacy_policy">Privacy policy</a> | <a href="/colophon">Colophon</a> | <a class="socialmedia-link" href="https://twitter.com/hexrayssa"><i class="fab fa-twitter"></i></a><a class="socialmedia-link" href="https://www.linkedin.com/company/hex-rays-sa"><i class="fab fa-linkedin"></i></a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript' src='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/bootstrap.bundle.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/slick/slick.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/custom.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/themes/hex-rays/dist/js/highlight.pack.js?ver=5.4.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.hex-rays.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.hex-rays.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.4'></script>
+
+<script type="text/javascript">
+    let x = location.pathname.split("/");
+    if (x[1]==="blog")
+        $(".isblog").addClass('current-menu-item');
+    else if (x[1]==="news_details")
+        $(".isnews").addClass('current-menu-item');
+    else if (x[1]==="contests_details")
+        $(".iscontests").addClass('current-menu-item');
+    $("body.page-template-page-user-fo-php div#regular-page div.col-12.col-md-9,body.page-template-page-user-php div#regular-page div.col-12.col-md-9,body.page-template-page-single-page-php div#regular-page div.col-12.col-md-9").removeClass("col-md-9");
+    $("body.page-template-page-user-fo-php div#regular-page div.col-6.col-md-10,body.page-template-page-user-php div#regular-page div.col-6.col-md-10,body.page-template-page-single-page-php div#regular-page div.col-6.col-md-10").toggleClass("col-6 col-md-10 col-md-12")
+    $("body.page-template-page-user-fo-php div#regular-page div.col-6.col-md-8,body.page-template-page-user-php div#regular-page div.col-6.col-md-8,body.page-template-page-single-page-php div#regular-page div.col-6.col-md-8").toggleClass("col-6 col-md-8 col-md-12")
+    $("body.contests_post-template-default div#regular-page div.col-12.col-lg-10,body.single-contests_post div#regular-page div.col-12.col-lg-10").toggleClass("col-12 col-lg-10 col-md-12")
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<a id="go-to-top" href="#top" title="Go to the top of the page"><img src="/wp-content/themes/hex-rays/img/icon_top64x64.png" alt="Go to top of page"></a>
+
+</body>
+</html>
