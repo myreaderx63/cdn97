@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="content-type" content="text/html;charset=gbk" />
+<meta property="wb:webmaster" content="3aababe5ed22e23c" />
+<meta name="referrer" content="always" />
+<title>真相问答机_知道日报特约作者_百度知道</title>
+<link rel="shortcut icon" href="//www.baidu.com/favicon.ico?t=20171027" type="image/x-icon" />
+<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg" />
+
+<script>
+    window.alogObjectConfig = {
+        product: '102',
+        page: '', 
+        monkey_page: '',
+        speed_page: '',
+        speed: {
+            sample: ''
+        },
+        monkey: {
+            sample: ''
+        },
+        exception: { 
+            sample: ''
+        },
+        feature: {
+            sample: ''
+        },
+        cus: {
+            sample: '',
+            custom_metrics: []
+        },
+        csp: {
+            sample: '',
+            'default-src': [
+                {match: '*bae.baidu.com', target: 'Accept,Warn'},
+                {match: '*.baidu.com,*.bdstatic.com,*.bdimg.com,localhost,*.hao123.com,*.hao123img.com', target: 'Accept'},
+                {match: /^(127|172|192|10)(\.\d+){3}$/, target: 'Accept'},
+                {match: '*', target: 'Accept,Warn'}
+            ]
+        }
+    };
+ 
+    void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+    void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>
+
+<script>
+	!function(document, window){
+		var log = {
+			list: [],
+			host: 'https://' + location.host + '/api/httpscheck',
+			log: function(param) {
+				var a = [];
+		    	for(var k in param) {
+		    		a.push(k + '=' + param[k]);
+		    	}
+		    	var msg = a.join('&');
+		    	if(~this.list.indexOf(msg)){
+		    		return;
+		    	}
+		    	this.list.push(msg);
+		  		var img = new Image();
+		    	var key = '_ik_log_' + (Math.random()*2147483648 ^ 0).toString(36);
+		    	window[key] = img;
+		    		img.onload = img.onerror = img.onabort = function() {
+		        		img.onload = img.onerror = img.onabort = null;
+		        		window[key] = null;
+			    		img = null;
+		    	};
+		  		img.src = this.host + '?' + msg;
+			}
+		};
+
+		function HTTPSWarningLog(){
+			this.selector = [
+				'link',
+				'script',
+				'img',
+				'embed',
+				'iframe'
+			];
+			this.warningCounter = 0;
+			this.init();
+		};
+
+		HTTPSWarningLog.prototype = {
+			init: function(){
+				this.fetch();
+			},
+
+			fetch: function(){
+				for(var tags = this.selector, i =0, len = tags.length; i < len;i++) {
+					this.getTag(tags[i]);
+				}
+			},
+
+			getTag: function(tag) {
+				var domList = document.getElementsByTagName(tag);
+				if(!domList.length) {
+					return;
+				}
+				for(var i = 0,len = domList.length;i<len;i++) {
+					var el = domList[i];
+					var url = el.getAttribute(el.tagName==='LINK' ? 'href' : 'src');
+                    if(el.getAttribute('rel') === 'canonical') {
+                        continue;
+                    }
+					if(url && 'https:' === location.protocol && !url.indexOf('http:')){
+						this.sendLog(el, el.tagName.toLowerCase(),url);
+						this.warningCounter++;
+					}
+				}
+			},
+			
+			sendLog: function(el, type, url){
+				log.log({
+					url: location.href,
+					wtype: type,
+					wurl: url
+				});
+			}
+		};
+
+		function domReady(fn){
+		    if(document.addEventListener) {
+		        document.addEventListener('DOMContentLoaded', function() {
+		            document.removeEventListener('DOMContentLoaded',arguments.callee, false);
+		            fn();
+		        }, false);
+		    }else if(document.attachEvent) {
+		        document.attachEvent('onreadystatechange', function() {
+		            if(document.readyState == 'complete') {
+		                document.detachEvent('onreadystatechange', arguments.callee);
+		                fn();
+		            }
+		        });
+		    }
+		};
+
+		domReady(function(){
+			new HTTPSWarningLog();
+			for(var i=1; i<6; i++) {
+				!function(i){
+					setTimeout(function(){
+						new HTTPSWarningLog();
+					}, i*i*i*1000);
+				}(i);
+			}
+		});
+	}(document, window);
+</script>
+
+<meta name="keywords" content="知道日报 百度知道 特约作者 真相问答机" />
+<meta name="description" content='真相问答机：百度知道旗下辟谣栏目，已收集、辨析2300余条科普流言，北京地区网站联合辟谣平台成员。。知道日报是百度知道重磅推出的品牌内容栏目，泛生活领域的专业知识问答平台。基于百度知道强大的问答平台基础和良好的用户口碑，知道日报甄选广大网友深感兴趣的泛生活领域问题，涉及生活、科技、互联网、健康、环境、天文等几十个分类，邀请专业机构、专家学者，向读者提供专业优质的回答。
+' />
+
+<script type="text/javascript">
+			!function(){var n={},t={};n.context=function(n,e){var i=arguments.length;if(i>1)t[n]=e;else if(1==i){if("object"!=typeof n)return t[n];for(var o in n)n.hasOwnProperty(o)&&(t[o]=n[o])}},"F"in window||(window.F=n)}();;
+			
+            
+																																														
+			F.context('user', {"isLogin":"","isRealName":"","stoken":"","name":"","imId":"","id":"","euid":"","wealth":"","gradeIndex":"","isMavin":"","encryptedBDUSS":"4b2cownlDmLF9+8deNqmYuxhSWOIYOleFWhj+OU"});
+			F.context('user')['internalAdmin'] = null;
+
+									
+			            F.context('isQuality', false);
+            F.context('now', 1599418469);
+		</script>
+<script>F.context('sysTaskAutoInit', 1);</script>
+<!--[if lte IE 8]>
+<script>
+                (function(){
+                    var e="abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(","),
+                    i=e.length;
+                    while(i--){document.createElement(e[i])}
+                 })();
+            </script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="https://iknowpc.bdimg.com/static/common/pkg/common.0eafce9.css" /><link rel="stylesheet" type="text/css" href="https://iknowpc.bdimg.com/static/common/widget/header-metis/header.39c9ddf.css" /><link rel="stylesheet" type="text/css" href="https://iknowpc.bdimg.com/static/common/widget/set-tag/set-tag.0b3a009.css" /><link rel="stylesheet" type="text/css" href="https://iknowpc.bdimg.com/static/common/widget/task/task-last.1ba3b2d.css" /><link rel="stylesheet" type="text/css" href="https://iknowpc.bdimg.com/static/daily/pkg/module.bd1979a.css" /><link rel="stylesheet" type="text/css" href="https://gss0.bdstatic.com/7051cy792sgCpNKfpU_Y_D3/static/com-brand/pkg/com-brand_f83454b.css" /></head>
+
+<script> alog('speed.set', 'ht', +new Date()); </script>
+
+<body class="daily-author">
+
+
+<div id="userbar" class="userbar userbar-renew " data="">
+<ul class="aside-list">
+<li>
+<a href="http://www.baidu.com/" class="toindex">百度首页</a>
+</li>
+<li><a rel="nofollow" alog-alias="usrbar-login" href="javascript:;" id="userbar-login" log="type:2026,pname:account,mod:login,action:show,pos:pop">登录</a></li>
+<li><a rel="nofollow" alog-alias="usrbar-reg" id="userbar-reg" href="https://passport.baidu.com/v2/?reg&tpl=ik&color=green&u=" target="_blank">注册</a></li>
+<li class="shop-entrance">
+<a href="/shop" title="知道商城" log="type:2026,pos:top-right,target:shop-entrance">商城<i class="i-house" style="display: none;"></i></a>
+<span class="lucky-try" style="display: none"></span>
+</li>
+</ul>
+</div>
+
+
+
+<div class="head-wrap">
+<header id="header" class="container">
+
+<div class="daily-search-box-wp fixed">
+<div class="daily-search-box container-wide">
+<div class="logo-wp">
+<a href="/" class="zhidao-logo"></a><span>|</span><a href="/daily/" class="daily-logo"></a>
+</div>
+<form action="/daily/search" name="search-form" method="get" id="search-form" class="search-form">
+<input class="hdi" id="kw" maxlength="256" tabindex="1" size="46" name="word" value="" autocomplete="off" placeholder="输入关键字或作者名"/>
+<input type="hidden" name="ie" value="gbk">
+<button alog-action="g-search-anwser" type="submit" id="search-btn" hidefocus="true"  tabindex="2" class="btn-global">搜索日报</button>
+<a href="#" alog-action="g-i-ask" class="i-ask-link" id="ask-btn">我要提问</a>
+</form>
+</div>
+</div>
+
+</header>
+</div>
+<div id="body" class="container">
+
+
+<div class="menu-wp">
+<div id="menu" class="menu">
+<div class="main-menu">
+<a href="/daily" class="" data-index="1" data-log="type:2060,action:click,area:main-menu-0,page:daily-all">精选</a><a href="/daily/square" class=" menu-found" data-index="2" data-log="type:2060,action:click,area:main-menu-1,page:daily-all">发现<i class="found-tip" title="有新文章，等你来读"></i></a><a href="/daily/focusdaily" class="" data-index="3" data-log="type:2060,action:click,area:main-menu-2,page:daily-all">收藏/关注</a><a href="/daily/authorcenter" class="authorcenter " data-index="4" data-log="type:2060,action:click,area:main-menu-3,page:daily-all">
+<i></i>
+作者中心</a>
+</div>
+</div>
+</div>
+<div class="author-banner-wp">
+<div class="author-banner container-wide">
+<div class="info">
+<div class="avatar">
+<img src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/zhidaoribao2014/authors/zhenxiang100X10002.jpg" width="134" height="134" alt="用户的头像">
+</div>
+<div class="name">
+真相问答机
+<a class="author" title="作者"></a>
+</div>
+<div class="detail">百度知道旗下辟谣栏目，已收集、辨析2300余条科普流言，北京地区网站联合辟谣平台成员。</div>
+<div class="authorlink">
+<a class="baike" href="http://baike.baidu.com/link?url=NziwuafDK3K194Mz8Z7Z8wtvj9ElnaWquiyROngh9mSC8USN5Yl7rB4UGzDYXiEH9amSjdXgELkBLByY2SzPHLokv5SurlA8xpE8vP3ycfqy9oGvSuRmuhsTsuOlg5vL"  target="_blank" data-log="type:2060,action:click,area:baike,page:daily-author"><b></b>百科</a>
+<a class="zhuye" href="http://zhidao.baidu.com/liuyan"  target="_blank" data-log="type:2060,action:click,area:home,page:daily-author"><b></b>主页</a>
+</div>
+</div>
+<div class="tag">
+<div class="focus-num">
+<strong id="focus-num">488</strong>
+<span>粉丝</span>
+</div>
+<div class="daily">
+<strong>278</strong>
+<span>文章</span>
+</div>
+<div class="pv" id="pv">
+<strong></strong>
+<span>阅读量</span>
+</div>
+<a href="#" class="focus unfocus" data-log="type:2060,action:click,area:focus,page:daily-author"><b></b>关注TA</a>
+</div>
+</div>
+</div>
+<div class="clearfix container-wide content">
+<div class="my-daily-list-wp">
+<div class="my-daily-list clearfix">
+<div class="time-line">
+<ul>
+<li>
+<div class="year">
+<span><b>2017</b>年</span>
+<span class="tag"></span>
+</div>
+<div class="time first">
+<span>05月19日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>05月04日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月10日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月10日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月10日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月10日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月10日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月09日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月09日</span>
+<b></b>
+</div></li>
+<li>
+<div class="time">
+<span>04月09日</span>
+<b></b>
+</div></li>
+</ul>
+</div><div class="daily-list-wp">
+<ul class="daily-list" id="daily-list">
+<li class=" clearfix" data-id="55183">
+<a class="img-wp" href="/daily/view?id=55183" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://gss0.bdstatic.com/7051cy89RcgCncy6lo7D0j9wexYrbOWh7c50/zhidaoribao/2017/0520/mr.jpg" alt="【母乳喂养日】这些养娃误区你中招了吗？" title="【母乳喂养日】这些养娃误区你中招了吗？" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=55183" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+【母乳喂养日】这些养娃误区你中招了吗？
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=55183" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+又是一年520，甜蜜气息已经在空气中开始弥漫~但你知道吗？520也是全国母乳喂养宣传日。
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(16262)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="52214">
+<a class="img-wp" href="/daily/view?id=52214" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/3b292df5e0fe9925fe9711423ea85edf8db1710c?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="宝宝出生6个月内不需要喂水？" title="宝宝出生6个月内不需要喂水？" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=52214" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+宝宝出生6个月内不需要喂水？
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=52214" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+“多喝水”这条育儿经验，其实来源于成年人。比如“每天喝8杯水”，喝水多多益善等等。但是宝妈们想过吗，不能用对成年人的思维模式，看待婴幼儿问题！
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(554)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47980">
+<a class="img-wp" href="/daily/view?id=47980" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/342ac65c1038534364ff08e39a13b07ecb8088c4?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="右脑功能远远胜过左脑？甚至影响一个人的智商？" title="右脑功能远远胜过左脑？甚至影响一个人的智商？" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47980" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+右脑功能远远胜过左脑？甚至影响一个人的智商？
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47980" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+儿童右脑开发的宣传铺天盖地，右脑的功用被描述的十分重要，远远胜过左脑。右脑储存的信息是左脑的10万倍，左脑掌管语言逻辑，而右脑负责情绪艺术和创造力。这是真的？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(33666)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47984">
+<a class="img-wp" href="/daily/view?id=47984" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/503d269759ee3d6d3ad10e094a166d224e4aded9?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="年龄越大学习语言能力越差？为什么学外语这么难" title="年龄越大学习语言能力越差？为什么学外语这么难" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47984" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+年龄越大学习语言能力越差？为什么学外语这么难
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47984" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+年龄越小，学习语言的天赋就越显著，便如语言都是在婴儿时期学习的一样。但随着年龄增长，这种能力会迅速减弱，等老了再想学习外语就难上加难了？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(367)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47986">
+<a class="img-wp" href="/daily/view?id=47986" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/eac4b74543a98226e0dfd9e58382b9014b90ebd2?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="吃了耳屎会变成哑巴？这个隐患值得注意" title="吃了耳屎会变成哑巴？这个隐患值得注意" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47986" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+吃了耳屎会变成哑巴？这个隐患值得注意
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47986" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+我们小时候大多都听过这么一个说法，说“不能吃耳屎，吃了会变哑巴”或者是“吃了耳屎会变聋子”。这是真的？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(450)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47987">
+<a class="img-wp" href="/daily/view?id=47987" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/09fa513d269759ee5fdd9d09bbfb43166c22df67?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="法国梧桐其实产自中国？但很多人不知道这件事" title="法国梧桐其实产自中国？但很多人不知道这件事" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47987" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+法国梧桐其实产自中国？但很多人不知道这件事
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47987" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+有种树，叶子像肥肥的手掌，树皮会一小块一小块的剥落。我们管这种树叫法国梧桐。其实，叫“桐”的植物有很多，它们之间的关系，你很可能理不清。
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(227)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47988">
+<a class="img-wp" href="/daily/view?id=47988" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/962bd40735fae6cd6b0f54a306b30f2443a70fbc?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="人类可以追上猎豹吗？看完这个故事终于相信了" title="人类可以追上猎豹吗？看完这个故事终于相信了" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47988" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+人类可以追上猎豹吗？看完这个故事终于相信了
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47988" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+猎豹跑得快，人类都知道。人类可以跑得过猎豹吗？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(546)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47989">
+<a class="img-wp" href="/daily/view?id=47989" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/bd3eb13533fa828b7f3b6621f41f4134960a5adc?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="智能电表比普通电表更省电？但节能的原因很少有人知道" title="智能电表比普通电表更省电？但节能的原因很少有人知道" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47989" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+智能电表比普通电表更省电？但节能的原因很少有人知道
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47989" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+智能电表当初进入千家万户时，主打的宣传点是“节能省电”，这似乎已成了大家接纳这个新鲜事物的最佳理由。这是真的吗？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(1282)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class=" clearfix" data-id="47991">
+<a class="img-wp" href="/daily/view?id=47991" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/c75c10385343fbf2364e45e1b97eca8064388f96?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="为什么很多树在冬天会被包起来？原因很多人不知道" title="为什么很多树在冬天会被包起来？原因很多人不知道" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47991" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+为什么很多树在冬天会被包起来？原因很多人不知道
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47991" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+在冬天，能看到树木能被多种方式“包装”起来，有用麻绳缠绕树干的、有在树干上缠绕塑料布的、有用塑料布将树冠包起来的，还有就是给树干涂上白色“颜料”。它们的用途是什么呢？
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(666)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+<li class="last clearfix" data-id="47995">
+<a class="img-wp" href="/daily/view?id=47995" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+<img src="https://iknow-pic.cdn.bcebos.com/728da9773912b31baf1519eb8f18367adbb4e1f3?x-bce-process=image/resize,m_lfit,w_800,h_450,limit_1/quality,q_85" alt="胡须会越刮越密吗？决定胡须密度的因素有哪些" title="胡须会越刮越密吗？决定胡须密度的因素有哪些" width="800" height="450">
+</a>
+<div class="daily-cont">
+<div class="daily-cont-top">
+<h2>
+<a href="/daily/view?id=47995" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+胡须会越刮越密吗？决定胡须密度的因素有哪些
+</a>
+</h2>
+<div class="summer">
+<a href="/daily/view?id=47995" target="_blank" data-log="type:2060,action:click,area:daily-list,page:daily-ahthor">
+“胡子会越刮越密”是男人们，尤其是青年人经常听到的一句“劝告”。在很多男性的潜意识中，已经形成“胡子越刮越密”的先入为主的印象。
+</a>
+</div>
+</div>
+<div class="daily-info">
+<span class="browse-count">阅读(483)</span>
+<span class="comment-count"></span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<nav class="pager h-center line">
+<b>1</b><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=10">2</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=20">3</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=30">4</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=40">5</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=50">6</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=60">7</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=70">8</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=80">9</a><a href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=90">10</a><a class="pager-next" href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=10">下一页&gt;</a><a class="pager-last" href="/daily/author?un=真相问答机&ie=gbk&rn=10&pn=270">尾页</a>
+</nav>
+</div></div>
+<div class="f-contact">合作及供稿请联系：zdribao@baidu.com</div>
+
+</div>
+
+
+<footer id="footer" class="wgt-footer">
+<p>
+<a target="_blank" rel="nofollow" href="http://help.baidu.com/question?prod_id=9&class=337">帮助</a>
+&nbsp;|&nbsp;<a target="_blank" rel="nofollow" href="javascript:;" id="footer-feedback">意见反馈</a>
+&nbsp;|&nbsp;<a target="_blank" rel="nofollow" href="http://help.baidu.com/newadd?prod_id=9&category=1">投诉举报</a>
+</p>
+<p>
+京ICP证030173号-1&nbsp;&nbsp;&nbsp;京网文【2013】0934-983号&nbsp;&nbsp;&nbsp;&nbsp;    &copy;2020Baidu&nbsp;&nbsp;<a rel="nofollow" href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;|&nbsp;<a rel="nofollow" href="http://help.baidu.com/question?prod_id=9&class=325&id=2760" target="_blank">知道协议</a>&nbsp;</p>
+</footer>
+
+
+
+
+
+
+
+<script>
+    void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+    </script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?92f9337283b8a859284c612d2cfeb037";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="text/javascript"> window.tt = 1599418469;</script>
+</body><script type="text/javascript" src="https://iknowpc.bdimg.com/static/common/lib/mod.75d1f98.js"></script><script nonce="" type="text/javascript">(window.__IKNOW_GLOBAL__ || window).require.resourceMap({"res":{"common:widget\/lib\/jquery\/jquery.origin.js":{"pkg":"common:p3"},"common:widget\/js\/util\/event\/event.js":{"pkg":"common:p6","deps":["common:widget\/lib\/jquery\/jquery.js"]},"common:widget\/bottom-ask\/bottom-ask.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/util\/log\/log.js"]},"common:widget\/css\/fonts\/iconfont.js":{"pkg":"common:p0"},"common:widget\/css\/fonts\/iconfont.min.js":{"pkg":"common:p0"},"common:widget\/footer-new\/footer-new.js":{"pkg":"common:p0","deps":["common:widget\/lib\/jquery\/jquery.js","common:widget\/js\/util\/event\/event.js"]},"common:widget\/footer\/footer.js":{"pkg":"common:p0"},"common:widget\/header-metis\/header.js":{"pkg":"common:p0","deps":["common:widget\/lib\/jquery\/jquery.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/template\/template.js","common:widget\/js\/ui\/scrollbar-new\/scrollbar-new.js","common:widget\/js\/util\/store\/store.js"]},"common:widget\/menu\/menu.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js"]},"common:widget\/search-box-new\/search-box-new.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/suggestion-new\/suggestion-new.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/util\/form\/form.js","common:widget\/js\/util\/log\/log.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/lib\/jquery.placeholder\/jquery.placeholder.js"]},"common:widget\/set-tag\/set-tag.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/template\/template.js","common:widget\/js\/ui\/scrollbar\/scrollbar.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/lib\/jquery.ui\/jquery.ui.sortable.js"]},"common:widget\/task\/task-last.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/https\/https.js","common:widget\/js\/ui\/pop-tip\/pop-tip.js","common:widget\/js\/util\/template\/template.js","common:widget\/js\/logic\/signin-task\/signin-task.js"]},"common:widget\/userbar-renew\/userbar-renew.js":{"pkg":"common:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/logic\/login\/login.js","common:widget\/js\/util\/log\/log.js","common:widget\/js\/util\/store\/store.js"]},"com-brand:widget\/js\/uploader\/uploader.js":{"url":"https:\/\/gss0.bdstatic.com\/7051cy792sgCpNKfpU_Y_D3\/static\/com-brand\/widget\/js\/uploader\/uploader_b149a46.js","deps":["common:widget\/lib\/jquery\/jquery.js","common:widget\/js\/ui\/base\/base.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/uri\/uri.js","common:widget\/js\/util\/webuploader\/webuploader.js"]},"com-brand:widget\/js\/ueditor\/ueditor.min.js":{"pkg":"com-brand:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/dialog\/dialog.js","com-brand:widget\/js\/ueditor\/ueditor.config.js","com-brand:widget\/js\/uploader\/uploader.js"]},"com-brand:widget\/js\/ueditor\/ueditor.config.js":{"pkg":"com-brand:p0"},"com-brand:widget\/js\/ueditor\/addon\/addon.js":{"pkg":"com-brand:p0","deps":["common:widget\/lib\/jquery\/jquery.js","common:widget\/js\/logic\/authcode\/authcode.js"]},"com-brand:widget\/js\/ueditor\/lang\/lang.js":{"pkg":"com-brand:p0"},"com-brand:widget\/js\/ueditor\/prototype\/prototype.js":{"pkg":"com-brand:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/util\/log\/log.js"]},"daily:widget\/acenter-notice\/acenter-notice.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/js\/submit\/submit.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js"]},"daily:widget\/js\/author\/author.js":{"pkg":"daily:p0","deps":["daily:widget\/js\/submit\/submit.js"]},"daily:widget\/author-banner\/author-banner.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","daily:widget\/js\/author\/author.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/author-info\/author-info.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js"]},"daily:widget\/daily-list\/acenter-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/pager\/normalPager.js"]},"daily:widget\/daily-list\/daily-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/js\/daily\/daily.js":{"pkg":"daily:p0","deps":["daily:widget\/js\/submit\/submit.js"]},"daily:widget\/daily-list\/fav-daily-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","daily:widget\/js\/daily\/daily.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/daily-list\/search-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/loading\/loading.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/daily-list\/show-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/template\/template.js","common:widget\/js\/util\/suffix-str\/suffix-str.js","daily:widget\/loading\/loading.js"]},"daily:widget\/daily-list\/text-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","daily:widget\/js\/daily\/daily.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/detail\/decorate-img.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/js\/player\/cyberplayer.js":{"pkg":"daily:p0"},"daily:widget\/detail\/detail.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js","daily:widget\/js\/daily\/daily.js","daily:widget\/js\/author\/author.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/event\/event.js","daily:widget\/js\/player\/cyberplayer.js"]},"daily:widget\/detail\/support.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/log\/log.js"]},"daily:widget\/js\/jcrop\/jcrop.jquery.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/edit\/edit.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","com-brand:widget\/js\/ueditor\/ueditor.min.js","common:widget\/js\/util\/template\/template.js","daily:widget\/js\/daily\/daily.js","common:widget\/js\/ui\/dialog\/dialog.js","daily:widget\/js\/player\/cyberplayer.js","common:widget\/js\/util\/event\/event.js","common:widget\/lib\/juicer\/juicer.js","daily:widget\/js\/jcrop\/jcrop.jquery.js","common:widget\/lib\/jquery.placeholder\/jquery.placeholder.js"]},"daily:widget\/favauthor-list\/favauthor-list.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","daily:widget\/js\/author\/author.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/hot-author\/hot-author.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/hot-daily\/hot-daily.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/hot-daily\/hot-get.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/hot-video\/hot-video.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/income\/income-content\/income-content.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/pager\/normalPager.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/income\/set-payee\/set-payee.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/ui\/uploader\/uploader.js","common:widget\/js\/util\/https\/https.js"]},"daily:widget\/js\/baidubce\/baidubce-sdk.bundle.min.js":{"pkg":"daily:p0"},"daily:widget\/js\/custom-style\/custom-style.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/js\/page\/authorcenter.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/log\/log.js","common:widget\/js\/util\/tangram\/url.js"]},"daily:widget\/js\/validator\/validator.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/js\/page\/companyapply.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/lib\/jquery.placeholder\/jquery.placeholder.js","daily:widget\/js\/custom-style\/custom-style.js","common:widget\/js\/ui\/uploader\/uploader.js","common:widget\/js\/ui\/countword\/countword.js","daily:widget\/js\/validator\/validator.js","common:widget\/js\/util\/https\/https.js"]},"daily:widget\/js\/page\/index.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/tangram\/cookie.js"]},"daily:widget\/js\/page\/personapply.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/lib\/jquery.placeholder\/jquery.placeholder.js","daily:widget\/js\/custom-style\/custom-style.js","common:widget\/js\/ui\/uploader\/uploader.js","common:widget\/js\/ui\/countword\/countword.js","daily:widget\/js\/validator\/validator.js","common:widget\/js\/util\/https\/https.js"]},"daily:widget\/left-aside\/left-aside.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js"]},"daily:widget\/list-author\/list-author.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/template\/template.js","common:widget\/js\/ui\/dialog\/dialog.js","common:widget\/js\/util\/suffix-str\/suffix-str.js","daily:widget\/js\/author\/author.js","daily:widget\/loading\/loading.js"]},"daily:widget\/menu\/menu.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/event\/event.js"]},"daily:widget\/period-nav\/period-nav.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/util\/template\/template.js"]},"daily:widget\/rank\/rank-container\/rank-container.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/rel-daily\/rel-daily.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/search-box\/search-box.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/lib\/jquery.placeholder\/jquery.placeholder.js","common:widget\/js\/util\/form\/form.js","common:widget\/js\/util\/log\/log.js"]},"daily:widget\/share\/share.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"daily:widget\/topic-cont\/topic-cont.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js","common:widget\/js\/ui\/pager\/normalPager.js","common:widget\/js\/ui\/dialog\/dialog.js"]},"daily:widget\/view-replier\/view-replier.js":{"pkg":"daily:p0","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"common:widget\/js\/logic\/tip-template\/tipTemplate.es.js":{"pkg":"common:p5","deps":["common:widget\/lib\/jquery\/jquery.js"]},"common:widget\/js\/logic\/usergrade\/threshold.es.js":{"pkg":"common:p5"},"common:widget\/js\/logic\/usergrade\/gradedata.es.js":{"pkg":"common:p5","deps":["common:widget\/js\/logic\/usergrade\/threshold.es.js"]},"common:widget\/js\/ui\/newDialog\/newDialog.es.js":{"pkg":"common:p5","deps":["common:widget\/js\/util\/tangram\/tangram.js"]},"common:widget\/js\/ui\/v-flash\/js\/v-icon.es.js":{"pkg":"common:p5"},"common:widget\/js\/ui\/v-flash\/js\/flash.es.js":{"pkg":"common:p5","deps":["common:widget\/js\/ui\/v-flash\/js\/v-icon.es.js"]},"common:widget\/js\/util\/domToImage\/dom-to-image.es.js":{"pkg":"common:p5"},"common:widget\/js\/util\/monitor\/monitor.es.js":{"pkg":"common:p5","deps":["common:widget\/js\/util\/log\/log.js"]}},"pkg":{"common:p0":{"url":"https:\/\/iknowpc.bdimg.com\/static\/common\/pkg\/more.f3a672b.js","has":["common:widget\/bottom-ask\/bottom-ask.js","common:widget\/css\/fonts\/iconfont.js","common:widget\/css\/fonts\/iconfont.min.js","common:widget\/footer-new\/footer-new.js","common:widget\/footer\/footer.js","common:widget\/header-metis\/header.js","common:widget\/menu\/menu.js","common:widget\/search-box-new\/search-box-new.js","common:widget\/set-tag\/set-tag.js","common:widget\/task\/task-last.js","common:widget\/userbar-renew\/userbar-renew.js"]},"com-brand:p0":{"url":"https:\/\/gss0.bdstatic.com\/7051cy792sgCpNKfpU_Y_D3\/static\/com-brand\/pkg\/editor_c813b7f.js","has":["com-brand:widget\/js\/ueditor\/ueditor.min.js","com-brand:widget\/js\/ueditor\/ueditor.config.js","com-brand:widget\/js\/ueditor\/addon\/addon.js","com-brand:widget\/js\/ueditor\/lang\/lang.js","com-brand:widget\/js\/ueditor\/prototype\/prototype.js"]},"daily:p0":{"url":"https:\/\/iknowpc.bdimg.com\/static\/daily\/pkg\/module.5cac358.js","has":["daily:widget\/acenter-notice\/acenter-notice.js","daily:widget\/js\/submit\/submit.js","daily:widget\/js\/author\/author.js","daily:widget\/author-banner\/author-banner.js","daily:widget\/author-info\/author-info.js","daily:widget\/daily-list\/acenter-list.js","daily:widget\/daily-list\/daily-list.js","daily:widget\/js\/daily\/daily.js","daily:widget\/daily-list\/fav-daily-list.js","daily:widget\/daily-list\/search-list.js","daily:widget\/loading\/loading.js","daily:widget\/daily-list\/show-list.js","daily:widget\/daily-list\/text-list.js","daily:widget\/detail\/decorate-img.js","daily:widget\/js\/player\/cyberplayer.js","daily:widget\/detail\/detail.js","daily:widget\/detail\/support.js","daily:widget\/js\/jcrop\/jcrop.jquery.js","daily:widget\/edit\/edit.js","daily:widget\/favauthor-list\/favauthor-list.js","daily:widget\/hot-author\/hot-author.js","daily:widget\/hot-daily\/hot-daily.js","daily:widget\/hot-daily\/hot-get.js","daily:widget\/hot-video\/hot-video.js","daily:widget\/income\/income-content\/income-content.js","daily:widget\/income\/set-payee\/set-payee.js","daily:widget\/js\/baidubce\/baidubce-sdk.bundle.min.js","daily:widget\/js\/custom-style\/custom-style.js","daily:widget\/js\/page\/authorcenter.js","daily:widget\/js\/validator\/validator.js","daily:widget\/js\/page\/companyapply.js","daily:widget\/js\/page\/index.js","daily:widget\/js\/page\/personapply.js","daily:widget\/left-aside\/left-aside.js","daily:widget\/list-author\/list-author.js","daily:widget\/menu\/menu.js","daily:widget\/period-nav\/period-nav.js","daily:widget\/rank\/rank-container\/rank-container.js","daily:widget\/rel-daily\/rel-daily.js","daily:widget\/search-box\/search-box.js","daily:widget\/share\/share.js","daily:widget\/topic-cont\/topic-cont.js","daily:widget\/view-replier\/view-replier.js"]},"common:p5":{"url":"https:\/\/iknowpc.bdimg.com\/static\/common\/pkg\/esmod.009f40a.js","has":["common:widget\/js\/logic\/tip-template\/tipTemplate.es.js","common:widget\/js\/logic\/usergrade\/threshold.es.js","common:widget\/js\/logic\/usergrade\/gradedata.es.js","common:widget\/js\/ui\/newDialog\/newDialog.es.js","common:widget\/js\/ui\/v-flash\/js\/v-icon.es.js","common:widget\/js\/ui\/v-flash\/js\/flash.es.js","common:widget\/js\/util\/domToImage\/dom-to-image.es.js","common:widget\/js\/util\/monitor\/monitor.es.js"]}}});</script><script type="text/javascript" src="https://iknowpc.bdimg.com/static/common/pkg/lib.33719ed.js"></script><script type="text/javascript" src="https://iknowpc.bdimg.com/static/common/pkg/commonjs.d4b3525.js"></script><script nonce="" type="text/javascript">
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;			window['__abbaidu_2016_subidgetf'] = function () {
+                var currentUrlArray = window.location.href.split("//");
+                var start = currentUrlArray[1].indexOf("/");
+                if (start == -1) {
+                    return 'iknow-pc-home';
+				}
+                var currentPath = currentUrlArray[1].substring(start);
+                if(currentPath.indexOf("?") != -1) {
+                    currentPath = currentPath.split("?")[0];
+                }
+                if (currentPath == "/") {
+                    return 'iknow-pc-home';
+				}
+				if (currentPath.indexOf("/question") === 0) {
+					return 'iknow-pc-qb';
+				}
+				if (currentPath.indexOf("/search") === 0) {
+					return 'iknow-pc-search';
+				}
+				return 'iknow-pc-other';
+			}
+			window['__abbaidu_2016_cb'] = function (responseData) {
+                try {
+                    var respJSON = JSON.parse(responseData);
+
+                    var d = new Date();
+                    d.setTime(d.getTime()+(60*60*1000));
+                    var expires = "expires="+d.toGMTString();
+                    document.cookie = 'shitong_key_id=' + respJSON.key_id + '; ' + expires + '; path=/';
+                    document.cookie = 'shitong_data=' + respJSON.data + '; ' + expires + '; path=/';
+                    document.cookie = 'shitong_sign=' + respJSON.sign + '; ' + expires + '; path=/';
+                } catch (err) {
+                }
+   			};
+		}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    F.context('sfrom', '');
+    require.async(['common:widget/userbar-renew/userbar-renew']);
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require.async(['daily:widget/search-box/search-box'], function(o) {
+        o.init(1);
+    });
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require.async(['daily:widget/menu/menu'], function (o) {
+        o.init(1);
+    });
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require.async(['daily:widget/author-banner/author-banner'], function (obj) {
+        obj.init({
+            id: 264,
+            focusNum: 488
+        });
+    });
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require.async(['daily:widget/daily-list/daily-list'], function(obj) {
+        obj.init();
+    });
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require.async(['common:widget/js/util/log/log'], function(log){
+    	log.init({
+    		query: 'body',
+    		action: 'click'
+    	});
+    });
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;    require('common:widget/js/logic/ie-prompt/ie-prompt');
+    require.async(['common:widget/footer/footer']);
+}();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;								                																	require.async(['common:widget/js/logic/dom-ready/dom-ready'], function(D){ D.init({"isNotPgc":"1"}) });
+            }();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;        require.async(["common:widget/js/logic/duration/duration"],function(dur){
+            dur.init();
+        });
+    }();
+!function(){var F = (window.__IKNOW_GLOBAL__ || window).F;var require = (window.__IKNOW_GLOBAL__ || window).require;			require.async(['common:widget/js/util/monitor/monitor.es'], function(m) {
+				m.monitor && m.monitor.init();
+			});
+		}();
+</script>
+<script type="text/javascript">
+    require.async(['common:widget/lib/jquery/jquery'], function ($) {
+        if (!/chrome|firefox|safari|msie 10|rsv:11|msie [89]/i.test(navigator.userAgent)) {
+            return;
+        }
+
+        window.BaiduHttps = window.BaiduHttps || {};
+        window.BaiduHttps.callbacks = function (data) {
+            if (data && data.s === 0) {
+                window.supportHttps = 1;
+                setTimeout(function () {
+                    $('a[href^="http://www.baidu.com/s?"]').each(function (index, item) {
+                        var link = $(item).attr('href');
+                        if (~link.indexOf('?wd=') || ~link.indexOf('&wd=')) {
+                            link = link.replace(/^http/, 'https');
+                            $(item).attr('href', link);
+                        }
+                    });
+                }, 2000);
+            }
+        };
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://www.baidu.com/con?from=zhidao';
+        document.body.appendChild(script);
+    });
+</script>
+
+
+<script async="" src="https://dlswbr.baidu.com/heicha/mw/abclite-2016-s.js"></script>
+
+
+</html>
